@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model Dojo 
+
+<div class="card shadow border p-3">
+    <h2 class="card-head fw-bold text-primary text-center">👾👾 Fill In The Form 👾👾</h2>
+    <div class="card-body">
+
+        <form asp-action="CreateForm" asp-controller="Home" method="post">
+            <div class="form-group mb-3">
+                <label asp-for="Name" class="form-label fw-bold">Your Name :</label>
+                <input class=" form-control" asp-for="Name">
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Location" class="form-label fw-bold">Dojo Location :</label>
+                <select class="form-control" name="Location">
+                    <option value="Tokyo">Tokyo</option>
+                    <option value="Rome">Rome</option>
+                    <option value="SanFran">SanFran</option>
+                    <option value="Venise">Venise</option>
+                </select>
+                <span asp-validation-for="Location" class="text-danger"></span>
+
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="FavLanguage" class="form-label fw-bold">Favorite Language : </label>
+                <select class="form-control" name="FavLanguage">
+                    <option value="English">English</option>
+                    <option value="Japaneese">Japaneese</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Arabe">Arabe</option>
+                </select>
+                <span asp-validation-for="FavLanguage" class="text-danger"></span>
+
+            </div>
+            <div class="d-flex gap-2 justify-content-center mb-3">
+                <label asp-for="Comment" class="form-label fw-bold">Comment (optional): </label>
+                <textarea class="form-control" name="Comment" id="#" cols="30" rows="5"></textarea>
+            </div>
+
+            <button class="btn btn-primary w-100"> Submit</button>
+        </form>
+
+    </div>
+</div>
