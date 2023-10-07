@@ -1,0 +1,15 @@
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day01\Practice\Fundamental\bin\Debug\net6.0\Fundametal.exe
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day01\Practice\Fundamental\bin\Debug\net6.0\Fundametal.deps.json
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day01\Practice\Fundamental\bin\Debug\net6.0\Fundametal.runtimeconfig.json
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day01\Practice\Fundamental\bin\Debug\net6.0\Fundametal.dll
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day01\Practice\Fundamental\bin\Debug\net6.0\Fundametal.pdb
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day01\Practice\Fundamental\obj\Debug\net6.0\Fundametal.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day01\Practice\Fundamental\obj\Debug\net6.0\Fundametal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day01\Practice\Fundamental\obj\Debug\net6.0\Fundametal.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day01\Practice\Fundamental\obj\Debug\net6.0\Fundametal.AssemblyInfo.cs
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day01\Practice\Fundamental\obj\Debug\net6.0\Fundametal.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day01\Practice\Fundamental\obj\Debug\net6.0\Fundametal.dll
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day01\Practice\Fundamental\obj\Debug\net6.0\refint\Fundametal.dll
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day01\Practice\Fundamental\obj\Debug\net6.0\Fundametal.pdb
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day01\Practice\Fundamental\obj\Debug\net6.0\Fundametal.genruntimeconfig.cache
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day01\Practice\Fundamental\obj\Debug\net6.0\ref\Fundametal.dll
