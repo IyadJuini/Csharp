@@ -27,7 +27,7 @@
             </div>
             <div class="form-group mb-3">
                 <label asp-for="FavLanguage" class="form-label fw-bold">Favorite Language : </label>
-                <select class="form-control" name="FavLanguage">
+                <select class="form-control" asp-for="FavLanguage">
                     <option value="English">English</option>
                     <option value="Japaneese">Japaneese</option>
                     <option value="Italian">Italian</option>
@@ -38,7 +38,7 @@
             </div>
             <div class="d-flex gap-2 justify-content-center mb-3">
                 <label asp-for="Comment" class="form-label fw-bold">Comment (optional): </label>
-                <textarea class="form-control" name="Comment" id="#" cols="30" rows="5"></textarea>
+                <textarea class="form-control" asp-for="Comment" id="#" cols="30" rows="5"></textarea>
             </div>
 
             <button class="btn btn-primary w-100"> Submit</button>

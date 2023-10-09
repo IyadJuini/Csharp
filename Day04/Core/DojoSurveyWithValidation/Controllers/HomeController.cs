@@ -18,20 +18,22 @@ public class HomeController : Controller
         return View();
     }
 
-    [HttpPost("/create")]
-    public IActionResult CreateForm(Dojo dojo)
+    [HttpPost("create")]
+    // public IActionResult CreateForm(string name, string location, string favLanguage )
+    public IActionResult CreateForm(Dojo newDojo)
     {
+
+        System.Console.WriteLine($"Name : {newDojo.Name}\nLocation : {newDojo.Location}\n Fav Lang : {newDojo.FavLanguage}\nComment : {newDojo.Comment}");
         if (ModelState.IsValid)
         {
-            System.Console.WriteLine($"Name : {dojo.Name}\n Location : {dojo.Location}\n Fav Lang : {dojo.FavLanguage}\n Comment : {dojo.Comment}");
-            return RedirectToAction("Result");
+            return RedirectToAction("Result", newDojo);
         }
         return View("Index");
     }
 
-    public IActionResult Result()
+    public IActionResult Result(Dojo dojo)
     {
-        return View();
+        return View(dojo);
     }
 
     public IActionResult Privacy()
