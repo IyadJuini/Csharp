@@ -1,0 +1,15 @@
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day02\OOPLecture\bin\Debug\net6.0\OOPLecture.exe
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day02\OOPLecture\bin\Debug\net6.0\OOPLecture.deps.json
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day02\OOPLecture\bin\Debug\net6.0\OOPLecture.runtimeconfig.json
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day02\OOPLecture\bin\Debug\net6.0\OOPLecture.dll
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day02\OOPLecture\bin\Debug\net6.0\OOPLecture.pdb
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day02\OOPLecture\obj\Debug\net6.0\OOPLecture.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day02\OOPLecture\obj\Debug\net6.0\OOPLecture.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day02\OOPLecture\obj\Debug\net6.0\OOPLecture.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day02\OOPLecture\obj\Debug\net6.0\OOPLecture.AssemblyInfo.cs
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day02\OOPLecture\obj\Debug\net6.0\OOPLecture.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day02\OOPLecture\obj\Debug\net6.0\OOPLecture.dll
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day02\OOPLecture\obj\Debug\net6.0\refint\OOPLecture.dll
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day02\OOPLecture\obj\Debug\net6.0\OOPLecture.pdb
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day02\OOPLecture\obj\Debug\net6.0\OOPLecture.genruntimeconfig.cache
+C:\Users\Admin\Desktop\coding_Dojo\.NET\CSHARP\Day02\OOPLecture\obj\Debug\net6.0\ref\OOPLecture.dll

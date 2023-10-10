@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+    string? Name = Context.Session.GetString("name");
+    string? FavFood = Context.Session.GetString("favFood");
+    int UserAge = (int)Context.Session.GetInt32("userAge");
+}
+<nav class="d-flex justify-content-between mb-5">
+    <h2>Session App</h2>
+    @* <button class="btn btn-danger">Clear Session</button> *@
+    <form asp-action="ClearSession" asp-controller="Home" method="post">
+        <input type="submit" value="Clear Session" class="btn btn-danger">
+    </form>
+</nav>
+<h2 class="mb-3">Number Of Users : @Context.Session.GetInt32("numberOfUsers")</h2>
+
+<div class="card shadow text-center">
+    <h4 class="card-head">@Name</h4>
+    <div class="card-body">
+        <div class="card-text h4">Age : @UserAge</div>
+        <div class="card-text h4">Favorite Recipe : @FavFood</div>
+    </div>
+    @* <h4 class="card-head">@Context.Session.GetString("name")</h4>
+    <div class="card-body">
+    <div class="card-text h4">Age : @Context.Session.GetInt32("userAge")</div>
+    <div class="card-text h4">Favorite Recipe :@Context.Session.GetString("favFood")</div>
+    </div> *@
+</div>

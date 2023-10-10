@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    string? Username = Context.Session.GetString("username");
+    @* var ageFromSession = *@
+    int Age = (int)Context.Session.GetInt32("age");
+}
+
+<div class="text-center">
+    <h1 class="display-4">Session Lecture 🤡🧠</h1>
+    <div class="card shadow mb-3">
+        <div class="card-body">
+            <div class="card-text h4">
+                Username : @Context.Session.GetString("username")
+                <br>
+                <span class="text-info">Username : @Username</span>
+            </div>
+            <div class="card-text h4">
+                Age : @Context.Session.GetInt32("age")
+                <br>
+                <span class="text-primary">Age : @Age</span>
+            </div>
+        </div>
+    </div>
+    <h2 class="mb-3">Number Of Users : @Context.Session.GetInt32("numberOfUsers")</h2>
+    <div class="card shadow mb-3">
+        <h4 class="card-head  bg-secondary bg-gradient bg-opacity-75">🎃 Session Form 🎃</h4>
+        <div class="card-body bg-secondary bg-gradient bg-opacity-25">
+            <form action="users/create" method="post">
+                <div class="form-group mb-3">
+                    <label for="" class="form-lable">Name</label>
+                    <input type="text" class="form-control" name="name">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="" class="form-lable">Age</label>
+                    <input type="number" class="form-control" name="age">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="" class="form-lable">Favorite Food</label>
+                    <input type="text" class="form-control" name="favFood">
+                </div>
+                <input type="submit" value="Post User" class="btn btn-success w-50">
+            </form>
+        </div>
+    </div>
+</div>
