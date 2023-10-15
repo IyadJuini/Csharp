@@ -15,32 +15,62 @@ public class HomeController : Controller
         _context = context; //! 7 
     }
 
-    public IActionResult Index()
-    {
-        return View();
-    }
-        [HttpPost("dishes/create")]
+
+    // ................................... Create .....................................
+    [HttpPost("dish/create")]
     public IActionResult CreateDish(Dish newDish)
     {
-        if (ModelState.IsValid)
+        if(ModelState.IsValid)
         {
-            // 1 - Add 
+            // ------- Add -------
             _context.Add(newDish);
-            // 2 - Save
+            // ------- Save ------
             _context.SaveChanges();
-            return RedirectToAction("Privacy");
+            return RedirectToAction("Index");
         }
-        return View("Index");
+        return View("Privacy");
     }
-    public IActionResult Privacy()
+    // ..................................................................................
+
+
+    // ................................... GET ALL ......................................
+    public IActionResult Index()
     {
-        List<Dish> AllDishes = _context.Dishes.ToList();
+        List<Dish> AllDishes = _context.Dishes.OrderByDescending(d => d.CreatedAt).ToList();
         return View(AllDishes);
     }
-    [HttpGet("dishes/{songId}/edit")]
-    public IActionResult Edit(int songId)
+    // ..................................................................................
+
+
+    // ..................................GET ONE BY {Id} ................................
+    [HttpGet("Dishes/{dishId}")]
+    public IActionResult Show(int dishId)
     {
-        Dish? DishToEdit = _context.Dishes.FirstOrDefault(q => q.DishId == songId);
+        Dish? DishToShow = _context.Dishes.FirstOrDefault(q => q.DishId == dishId);
+        return View(DishToShow);
+    }
+    // ...................................................................................
+
+
+    //................................... DELETE .........................................
+    [HttpPost("Dishes/destroy")]
+    public IActionResult DeleteDish(int dishId)
+    {
+        Dish? DishToDelete = _context.Dishes.FirstOrDefault(s => s.DishId == dishId);
+        // ------ Remove -----
+        _context.Dishes.Remove(DishToDelete);
+        // ------- Save ------
+        _context.SaveChanges();
+        return RedirectToAction("Index");
+    }
+    // ..................................................................................
+
+
+    // ................................... EDIT .........................................
+    [HttpGet("Dishes/{dishId}/edit")]
+    public IActionResult Edit(int dishId)
+    {
+        Dish? DishToEdit = _context.Dishes.FirstOrDefault(q => q.DishId == dishId);
         return View(DishToEdit);
     }
 
@@ -50,28 +80,28 @@ public class HomeController : Controller
         Dish? DishToUpdate = _context.Dishes.FirstOrDefault(q => q.DishId == editedDish.DishId);
         if (ModelState.IsValid)
         {
-            DishToUpdate.Name = editedDish.Name;
-            DishToUpdate.Chef = editedDish.Chef;
+            DishToUpdate.DishName = editedDish.DishName;
+            DishToUpdate.ChefName = editedDish.ChefName;
+            DishToUpdate.CaloriesNumber = editedDish.CaloriesNumber;
             DishToUpdate.Tastiness = editedDish.Tastiness;
-            DishToUpdate.Calories = editedDish.Calories;
             DishToUpdate.Description = editedDish.Description;
             DishToUpdate.UpdatedAt = DateTime.Now;
             _context.SaveChanges();
-            return RedirectToAction("Privacy");
+            return RedirectToAction("Show", new {dishId = DishToUpdate.DishId});
         }
         return View("Edit", DishToUpdate);
     }
+    // ..................................................................................
     
-    [HttpPost("dishes/destroy")]
-    public IActionResult DeleteDish(int songId)
+
+
+    // .................................. PRIVACY .......................................
+    public IActionResult Privacy()
     {
-        Dish? DishToDelete = _context.Dishes.FirstOrDefault(s => s.DishId == songId);
-        // 1 - Delete
-        _context.Dishes.Remove(DishToDelete);
-        // 2 - Save
-        _context.SaveChanges();
-        return RedirectToAction("Privacy");
+        return View();
     }
+    // ..................................................................................
+
 
 
 

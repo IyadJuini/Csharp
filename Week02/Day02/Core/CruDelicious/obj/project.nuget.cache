@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "53Dh0qaO2ddBshsCcEy1Ku8BSoyqP7HUHR6N4fIjgJ6wqTEqg9XkLUBeLXyv0RbrwevHxWDtLfHmoSXS8t4Oow==",
+  "dgSpecHash": "JxqNS+otTEcDQVbFa8d3MIAEoyq8PF5hzJ4GtMZmMlbP1yhsKXdIdE4kNqCDY3U+7R9VqHZO+E4o6CqILf5kPg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Desktop\\coding_Dojo\\.NET\\CSHARP\\Week02\\Day07\\Core\\CruDelicious\\CruDelicious.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\coding_Dojo\\.NET\\CSHARP\\Week02\\Day02\\Core\\CruDelicious\\CruDelicious.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.3\\microsoft.entityframeworkcore.6.0.3.nupkg.sha512",

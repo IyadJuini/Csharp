@@ -1,20 +1,24 @@
-﻿@{
-    ViewData["Title"] = "Privacy Policy";
+@{
+    ViewData["Title"] = "Edit Page";
 }
+
 @model Dish
 <div class="text-center">
-    <h1 class="display-4">Add a new Dish 🍜🍛🍚🍘!</h1>
-    <div class="card shadow border p-3">
+    <div class="d-flex justify-content-center">
+        <h1>Edit @Model.DishName</h1>
+    </div>
     <div class="card-head d-flex justify-content-evenly mb-3">
         <a href="/">Home</a>
         <a href="/Home/Privacy">Add a Dish</a>
     </div>
+
+    <div class="card shadow border p-3">
     <div class="card-body">
-        <form asp-action="CreateDish" asp-controller="Home" method="post" class="d-flex justify-content-around">
+        <form asp-action="UpdateDish" asp-controller="Home" method="post" class="d-flex justify-content-around">
             <div>
                 <div class="form-group mb-3">
                     <label asp-for="ChefName" class="form-label d-flex justify-content-start">Chef's Name</label>
-                    <input class=" form-control" name="ChefName">
+                    <input class=" form-control" asp-for="ChefName">
                     <span asp-validation-for="ChefName" class="text-danger"></span>
                 </div>
                 <div class="form-group mb-3">
@@ -39,7 +43,8 @@
                     <textarea class="form-control" asp-for="Description"></textarea>
                     <span asp-validation-for="Description" class="text-danger"></span>
                 </div>
-                <button class="btn btn-primary w-100 justify-content-end mt-5 "> Add Dish</button>
+                <input type="hidden" asp-for="DishId">
+                <button class="btn btn-primary w-100"> Edit Dish</button>
             </div>         
         </form>
     </div>

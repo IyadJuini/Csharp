@@ -786,11 +786,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\coding_Dojo\\.NET\\CSHARP\\Week02\\Day07\\Core\\CruDelicious\\CruDelicious.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\coding_Dojo\\.NET\\CSHARP\\Week02\\Day02\\Core\\CruDelicious\\CruDelicious.csproj",
       "projectName": "CruDelicious",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\coding_Dojo\\.NET\\CSHARP\\Week02\\Day07\\Core\\CruDelicious\\CruDelicious.csproj",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\coding_Dojo\\.NET\\CSHARP\\Week02\\Day02\\Core\\CruDelicious\\CruDelicious.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\coding_Dojo\\.NET\\CSHARP\\Week02\\Day07\\Core\\CruDelicious\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\coding_Dojo\\.NET\\CSHARP\\Week02\\Day02\\Core\\CruDelicious\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"

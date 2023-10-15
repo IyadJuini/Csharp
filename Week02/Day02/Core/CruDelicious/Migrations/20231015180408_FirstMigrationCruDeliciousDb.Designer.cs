@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CruDelicious.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20231010171757_migrationDishesDb")]
-    partial class migrationDishesDb
+    [Migration("20231015180408_FirstMigrationCruDeliciousDb")]
+    partial class FirstMigrationCruDeliciousDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,16 +21,16 @@ namespace CruDelicious.Migrations
                 .HasAnnotation("ProductVersion", "6.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("CruDelicious.Models.Song", b =>
+            modelBuilder.Entity("CruDelicious.Models.Dish", b =>
                 {
                     b.Property<int>("DishId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("Calories")
+                    b.Property<int>("CaloriesNumber")
                         .HasColumnType("int");
 
-                    b.Property<string>("Chef")
+                    b.Property<string>("ChefName")
                         .IsRequired()
                         .HasColumnType("longtext");
 
@@ -41,7 +41,7 @@ namespace CruDelicious.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("DishName")
                         .IsRequired()
                         .HasColumnType("longtext");
 
@@ -53,7 +53,7 @@ namespace CruDelicious.Migrations
 
                     b.HasKey("DishId");
 
-                    b.ToTable("Songs");
+                    b.ToTable("Dishes");
                 });
 #pragma warning restore 612, 618
         }

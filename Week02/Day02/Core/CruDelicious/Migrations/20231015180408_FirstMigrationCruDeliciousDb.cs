@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CruDelicious.Migrations
 {
-    public partial class migrationDishesDb : Migration
+    public partial class FirstMigrationCruDeliciousDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,17 +14,17 @@ namespace CruDelicious.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Songs",
+                name: "Dishes",
                 columns: table => new
                 {
                     DishId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "longtext", nullable: false)
+                    DishName = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Chef = table.Column<string>(type: "longtext", nullable: false)
+                    ChefName = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
+                    CaloriesNumber = table.Column<int>(type: "int", nullable: false),
                     Tastiness = table.Column<int>(type: "int", nullable: false),
-                    Calories = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     CreatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
@@ -32,7 +32,7 @@ namespace CruDelicious.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Songs", x => x.DishId);
+                    table.PrimaryKey("PK_Dishes", x => x.DishId);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
         }
@@ -40,7 +40,7 @@ namespace CruDelicious.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Songs");
+                name: "Dishes");
         }
     }
 }
