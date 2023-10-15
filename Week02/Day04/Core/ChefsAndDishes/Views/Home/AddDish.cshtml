@@ -1,0 +1,50 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model Dish
+
+<div class="text-center">
+    <h1 class="display-4 mb-5 ">Add a Dish</h1>
+    <div class="row">
+        <div class="col-6">
+            
+            <div class="border border-rounded p-2 bg-light bg-gradient-10">
+
+                <form asp-action="CreateDish" asp-controller="Home" method="post">
+                    <div class="form-group mb-3">
+                        <label asp-for="Name" class="form-label"></label>
+                        <input asp-for="Name" class="form-control">
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Calories" class="form-label"></label>
+                        <input asp-for="Calories" class="form-control">
+                        <span class="text-danger" asp-validation-for="Calories"></span>
+                    </div>
+
+                @await Html.PartialAsync("_Index")
+
+
+                <div class="form-group mb-3">
+            <span asp-validation-for="Tastiness" class="text-danger"></span>
+            <label asp-for="Tastiness" class="form-ckeck-label">Tastiness :</label>
+            <select name="Tastiness" class="form-select" aria-label="Default select example">
+            <option name="Tastiness" selected>Open this select menu</option>
+            <option name="Tastiness" value="1">One</option>
+            <option name="Tastiness" value="2">Two</option>
+            <option name="Tastiness" value="3">Three</option>
+            <option name="Tastiness" value="4">Four</option>
+            <option name="Tastiness" value="5">Five</option>
+            </select>
+            </div>
+
+
+
+                    <div class="mb-3">
+                        <input type="submit" class="btn btn-outline-primary w-50" value="Register">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
