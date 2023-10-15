@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    
+}
+
+
+<h1>
+@Context.Session.GetInt32("numberOfUsers")
+</h1>
+<h1>
+@Context.Session.GetString("Password")
+</h1>
+<a href="" class="btn btn-success">Add an Mdp</a>
