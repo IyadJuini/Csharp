@@ -1,0 +1,10 @@
+@model Like
+
+<form asp-action="UnLike" asp-asp-controller="Home" method="post">
+
+    <input type="hidden" asp-for="@Model.LikeId"  />
+    <input type="hidden" asp-for="@Model.UserId"  />
+    <input type="hidden" asp-for="@Model.PostId"  />
+    <input type="submit" value="👍" class="btn btn-danger" />
+
+</form>
