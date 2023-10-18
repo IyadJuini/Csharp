@@ -1,0 +1,19 @@
+@model OrderView
+
+<form asp-action="CreateOrder" asp-controller="Orders" method="post">
+    <label asp-for="@Model.NewOrder.Quantity" class="form-label h4"></label>
+    
+    @* <h4>
+        USerID : @Model.NewOrder.UserId
+        <br>
+        CraftId : @Model.NewOrder.CraftId
+        <br>
+        OwnerID : @Model.OwnerId
+    </h4> *@
+    <input type="hidden" asp-for="@Model.NewOrder.UserId" value=@Model.NewOrder.UserId />
+    <input type="hidden" asp-for="@Model.NewOrder.CraftId" value=@Model.NewOrder.CraftId />
+    <input asp-for="@Model.NewOrder.Quantity" class="form-control">
+    <span asp-validation-for="@Model.NewOrder.Quantity" class="text-danger h6"></span>
+    <input type="submit" value="Buy" class="btn btn-success w-100 mt-3"
+    @(Model.NewOrder.UserId == Model.OwnerId? "disabled":"")>
+</form>

@@ -12,10 +12,12 @@ public class User
     // FirstName
     [Required(ErrorMessage = "Please enter your username.")]
     [MinLength(2, ErrorMessage = "Please enter a valid username .")]
+    [Display(Name = "First Name ")]
     public string FirstName { get; set; }
     // LastName
     [Required(ErrorMessage = "Please enter your username.")]
     [MinLength(2, ErrorMessage = "Please enter a valid username .")]
+    [Display(Name = "Last Name ")]
     public string LastName { get; set; }
 
 
