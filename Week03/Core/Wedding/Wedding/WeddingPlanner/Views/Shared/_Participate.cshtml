@@ -1,0 +1,10 @@
+@model Participation
+
+
+<form asp-action="Participate" asp-controller="Participates" method="post">
+
+    <input type="hidden" asp-for="@Model.ParticipationId">
+    <input type="hidden" asp-for="@Model.UserId">
+    <input type="hidden" asp-for="@Model.WeddingId">
+    <button type="submit" class="btn btn-primary">✅ to the Marriage</button>
+</form>

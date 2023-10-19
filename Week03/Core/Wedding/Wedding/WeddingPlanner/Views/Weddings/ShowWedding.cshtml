@@ -1,0 +1,24 @@
+@{
+    ViewData["Title"] = "View Page Wedding";
+    int userId = (int)Context.Session.GetInt32("userId");
+}
+
+@model Wedding
+
+<h1>@Model.WeddingOne & @Model.WeddingTwo</h1>
+<hr>
+<h2>
+    @Model.myCreator.Username
+</h2>
+<h2>
+    @Model.Date
+</h2>
+<hr>
+
+<h1>Guests :</h1>
+@foreach (Participation participant in Model.WeddingParticipation)
+{
+    <p>@participant.User.Username</p>
+}
+
+
