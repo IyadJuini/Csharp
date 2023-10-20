@@ -52,6 +52,45 @@ public class CraftsController : Controller
         return View(OneCraft);
     }
 
+        [HttpPost()]
+    public IActionResult DeleteCraft(int craftId)
+    {
+        Craft? CraftToDelete = _context.Crafts
+        .FirstOrDefault(c => c.CraftId == craftId);
+        //1 Add 
+        _context.Remove(CraftToDelete);
+        //2 Save
+        _context.SaveChanges();
+        return RedirectToAction("ShopCrafts", "Crafts");
+    }
+
+    [HttpGet("/craft/{craftId}/edit")]
+    public IActionResult EditCraft(int craftId)
+    {
+        Craft? CraftToUpdate = _context.Crafts
+        .FirstOrDefault(c => c.CraftId == craftId);
+
+        return View(CraftToUpdate);
+    }
+
+    [HttpPost()]
+    public IActionResult EditedCraft(Craft editedCraft)
+    {
+        Craft? CraftToUpdate = _context.Crafts
+        .FirstOrDefault(d => d.CraftId == editedCraft.CraftId);
+        if (ModelState.IsValid)
+        {
+            CraftToUpdate.ImageUrl = editedCraft.ImageUrl;
+            CraftToUpdate.Price = editedCraft.Price;
+            CraftToUpdate.Title = editedCraft.Title;
+            CraftToUpdate.Quantity = editedCraft.Quantity;
+            CraftToUpdate.Description = editedCraft.Description;
+            CraftToUpdate.UpdatedAt = DateTime.Now;
+            _context.SaveChanges();
+            return RedirectToAction("ShowCraft",new{craftId = CraftToUpdate.CraftId});
+        }
+        return View("EditCraft",CraftToUpdate);
+    }
 
 }
 

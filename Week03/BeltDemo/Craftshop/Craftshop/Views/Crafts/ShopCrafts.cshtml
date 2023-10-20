@@ -22,12 +22,18 @@
                     @{
                         if (craft.UserId == UserId)
                         {
-
-                            <form class="d-flex justify-content-start m-2" asp-action="DeleteCraft"
-                                asp-route-craftId="@craft.CraftId" asp-controller="Crafts" method="post">
-                                <input type="submit" value="Delete" class="btn btn-danger">
-                            </form>
-                        }
+                            <div class="d-flex  gap-2">
+                                <div>
+                                    <form class="d-flex justify-content-start m-2" asp-action="DeleteCraft"
+                                        asp-route-craftId="@craft.CraftId" asp-controller="Crafts" method="post">
+                                        <input type="submit" value="Delete" class="btn btn-danger">
+                                    </form>
+                                </div>
+                                <div class="m-2">
+                                    <a href="/craft/@craft.CraftId/edit" class="btn btn-info "> Update </a>
+                                </div>                           
+                            </div>
+                            }
                     }
                 </div>
             </div>

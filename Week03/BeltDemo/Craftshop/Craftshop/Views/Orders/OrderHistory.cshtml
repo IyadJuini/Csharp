@@ -27,7 +27,7 @@
                                 double? sum = order.Quantity * order.Craft.Price;
                             }
                             <td>$@sum</td>
-                            <td>@order.Buyer.Username</td>
+                            <td>@order.Craft.Owner.Username</td>
                             <td>@order.CreatedAt.ToString("MM/dd/yyyy")</td>
                         </tr>
                     }
