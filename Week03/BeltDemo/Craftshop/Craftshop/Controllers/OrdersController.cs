@@ -14,6 +14,8 @@ public class OrdersController : Controller
     {
         _context = context;
     }
+
+    // ............................................ CREATE An Order ..................................................
     [HttpPost("orders/create")]
     public IActionResult CreateOrder(Order newOrder)
     {
@@ -33,7 +35,11 @@ public class OrdersController : Controller
         }
         return View("~/Views/Crafts/ShowCraft.cshtml", craft);
     }
-    [HttpGet("ordehistory")]
+// ..................................................................................................
+
+
+// ................................................. Get All Orders With Crafts and Owner .................................................
+    [HttpGet("orderHistory")]
     public IActionResult OrderHistory()
     {
         if (HttpContext.Session.GetInt32("userId") == null)
@@ -62,6 +68,7 @@ public class OrdersController : Controller
         };
         System.Console.WriteLine($"ORDER-HISTORY-------{orders}");
         return View(orderHistory);
-
     }
+    // ..................................................................................................
+
 }

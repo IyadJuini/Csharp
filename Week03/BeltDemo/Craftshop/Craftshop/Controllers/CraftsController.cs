@@ -14,6 +14,8 @@ public class CraftsController : Controller
     {
         _context = context;
     }
+
+    // .............................. Check If The User Is Connected ................................
     [HttpGet("crafts/new")]
     public IActionResult SellCraft()
     {
@@ -23,6 +25,10 @@ public class CraftsController : Controller
         }
         return View();
     }
+    // .............................................................................................
+
+
+    // ....................................... CREATE Craft ........................................
     [HttpPost("crafts/create")]
     public IActionResult CreateCraft(Craft newCraft)
     {
@@ -34,6 +40,10 @@ public class CraftsController : Controller
         }
         return View("SellCraft");
     }
+    // ..............................................................................................
+
+
+    // ...........................GET ALL Crafts With Their Owner....................................
     [HttpGet("crafts")]
     public IActionResult ShopCrafts()
     {
@@ -44,14 +54,20 @@ public class CraftsController : Controller
         List<Craft> AllCrafts = _context.Crafts.Include(craft => craft.Owner).ToList();
         return View(AllCrafts);
     }
+    // ................................................................................................
 
+
+    // ................................ Get ONE Craft By Id With his OWNER (SHOW CRAFT) ............................
     [HttpGet("crafts/{craftId}")]
     public IActionResult ShowCraft(int craftId)
     {
         Craft OneCraft = _context.Crafts.Include(craft => craft.Owner).FirstOrDefault(craft => craft.CraftId == craftId);
         return View(OneCraft);
     }
+    // ................................................................................................
 
+
+    // ........................................ DELETE Craft ..........................................
         [HttpPost()]
     public IActionResult DeleteCraft(int craftId)
     {
@@ -63,7 +79,10 @@ public class CraftsController : Controller
         _context.SaveChanges();
         return RedirectToAction("ShopCrafts", "Crafts");
     }
+    // .............................................................................................
 
+
+    // ................................ GET ONE BY ID (Craft To Edit) ...............................
     [HttpGet("/craft/{craftId}/edit")]
     public IActionResult EditCraft(int craftId)
     {
@@ -72,7 +91,10 @@ public class CraftsController : Controller
 
         return View(CraftToUpdate);
     }
+    // ............................................................................................
 
+
+    // ..................................... EDIT Craft ............................................
     [HttpPost()]
     public IActionResult EditedCraft(Craft editedCraft)
     {
@@ -91,6 +113,7 @@ public class CraftsController : Controller
         }
         return View("EditCraft",CraftToUpdate);
     }
+    // ...............................................................................................
 
 }
 

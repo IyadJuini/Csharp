@@ -5,10 +5,10 @@
 @await Html.PartialAsync("_NavBar")
 <div class="container mt-5">
     <h1 class="mb-5">Shop Crafts</h1>
-    <div class="row">
+    <div class="row d-flex justify-content-around">
         @foreach (Craft craft in Model)
         {
-            <div class="col-sm-6 col-lg-3 col-md-3 m-3">
+            <div class="col-sm-6 col-lg-3 col-md-3 m-4">
                 <div class="card border-white rounded" style="width: 18rem;">
                     <img class="card-img-top mt-2 " src="@craft.ImageUrl" alt="@craft.Title">
                     <div class="card-body">
