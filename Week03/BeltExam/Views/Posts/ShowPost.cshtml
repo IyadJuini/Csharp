@@ -1,0 +1,45 @@
+@{
+    int UserId = (int)Context.Session.GetInt32("userId");
+}
+@model Post
+@await Html.PartialAsync("_NavBar")
+
+<div class="container">
+    <div class="row d-flex gap-2 m-3">
+        <div class="col-8">
+            <img src="@Model.ImageUrl" alt="@Model.ImageUrl" class="img-fluid rounded border">
+        </div>
+        <div class="col-3 mb-3">
+            <p class="card-title h3 text-info">@Model.Title</p>
+            <p class="mb-3 h4">By : <span class="text-muted">@Model.Poster.FirstName</span></p>
+            <p class="mb-3 h4">Medium : <span class="text-muted">@Model.Medium</span></p>
+            <div class="card-text h4 ">
+                For Sale : @(Model.ForSale ? "yes" : "No")
+            </div>
+            <p class="card-text text-primary h4 mt-4">
+                @{
+                    int likes = (int)Model.PostLikes.Count();
+                }
+                @likes
+                <span>Likes</span>
+            </p>
+
+            @{
+                if (Model.UserId == UserId)
+                {
+                    <div class="d-flex  gap-2 mt-5">
+                        <div>
+                            <form class="d-flex justify-content-start m-2" asp-action="DeletePost"
+                                asp-route-postId="@Model.PostId" asp-controller="Posts" method="post">
+                                <input type="submit" value="Delete" class="btn btn-danger">
+                            </form>
+                        </div>
+                        <div class="m-2">
+                            <a href="/post/@Model.PostId/edit" class="btn btn-info "> Update </a>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>

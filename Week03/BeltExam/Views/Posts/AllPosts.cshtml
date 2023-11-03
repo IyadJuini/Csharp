@@ -1,0 +1,64 @@
+@{
+    int UserId = (int)Context.Session.GetInt32("userId");
+}
+@model List<Post>
+@await Html.PartialAsync("_NavBar")
+<div class="container mt-5">
+    <h1 class="mb-5">All posts</h1>
+    <div class="row d-flex justify-content-around">
+        @foreach (Post post in Model)
+        {
+            <div class="col-sm-6 col-lg-3 col-md-3 m-4">
+                <div class="card border-white rounded" style="width: 18rem;">
+                    <img class="card-img-top mt-2 " src="@post.ImageUrl" alt="@post.Title">
+                    <div class="card-body">
+                        <div class="d-flex flex-column gap-2">
+                            <a href="posts/@post.PostId" class="card-title h5 text-info">@post.Title</a>
+                            <p class="card-text">By : <span class="text-muted">@post.Poster.FirstName</span></p>
+                            <p class="card-text">Medium : <span class="text-muted">@post.Medium</span></p>
+                            <p class="card-text"> 
+                                @{
+                                    int likes = (int)post.PostLikes.Count();
+                                }
+                                @likes
+                                <span>Likes</span>
+                            </p>
+                        </div>
+                        <div class="card-text h4">
+                            For Sale : @(post.ForSale ? "yes" : "No")
+                        </div>
+                    </div>
+                    @{
+                        if (post.UserId == UserId)
+                        {
+                            <div class="d-flex  gap-1">
+                                <div>
+                                    <form class="d-flex justify-content-start m-2" asp-action="DeletePost"
+                                        asp-route-postId="@post.PostId" asp-controller="Posts" method="post">
+                                        <input type="submit" value="Delete" class="btn btn-danger">
+                                    </form>
+                                </div>
+                                <div class="m-2">
+                                    <a href="/post/@post.PostId/edit" class="btn btn-info "> Update </a>
+                                </div>
+                            </div>
+                        } else 
+                                {
+                                    if (post.PostLikes.Any(like => like.UserId == UserId))
+                                        {
+                                            Like LikeToDelete = post.PostLikes.FirstOrDefault(like => like.PostId == post.PostId && like.UserId == UserId);
+                                            @await Html.PartialAsync("~/Views/Likes/_UnLike.cshtml" ,LikeToDelete);
+                                        } else {
+                                                    Like newLike = new(){UserId = UserId,
+                                                    PostId = post.PostId};
+                                                    @await Html.PartialAsync("~/Views/Likes/_Like.cshtml" , newLike); 
+                                                }
+                                }
+                    }
+
+
+                </div>
+            </div>
+        }
+    </div>
+</div>

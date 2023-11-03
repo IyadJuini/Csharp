@@ -1,0 +1,37 @@
+@model User
+
+<div class="card mt-3 shadow">
+    <h2 class="card-header">Register</h2>
+    <div class="card-body">
+        <form  asp-action="Register" asp-controller="Users" method="post"> 
+            <div class="mb-3">
+                <label asp-for="FirstName" class="form-label"></label>
+            <input asp-for="FirstName" class="form-control">
+            <span asp-validation-for="FirstName" class="form-text text-danger h4" ></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="LastName" class="form-label"></label>
+            <input asp-for="LastName" class="form-control">
+            <span asp-validation-for="LastName" class="form-text text-danger h4" ></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Email"></label>
+            <input asp-for="Email" class="form-control">
+            <span asp-validation-for="Email" class="form-text text-danger h4"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Password"></label>
+            <input asp-for="Password" class="form-control">
+            <span asp-validation-for="Password" class="form-text text-danger h4"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ConfirmPassword"></label>
+            <input asp-for="ConfirmPassword" class="form-control">
+            <span asp-validation-for="ConfirmPassword" class="form-text text-danger h4"></span>
+            </div>
+            <div>
+                <input type="submit" value="Register" class="btn btn-dark btn-m fw-bold">
+            </div>
+        </form>
+    </div>
+</div>
